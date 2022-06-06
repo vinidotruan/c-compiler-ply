@@ -1,0 +1,101 @@
+Created by PLY (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> declaration
+Rule 1     declaration -> token identifier
+Rule 2     identifier -> ID
+Rule 3     token -> TYPEID
+Rule 4     token -> FLOAT
+Rule 5     token -> CHAR
+Rule 6     token -> INT
+
+Terminals, with rules where they appear
+
+CHAR                 : 5
+FLOAT                : 4
+ID                   : 2
+INT                  : 6
+TYPEID               : 3
+error                : 
+
+Nonterminals, with rules where they appear
+
+declaration          : 0
+identifier           : 1
+token                : 1
+
+
+state 0
+
+    (0) S' -> . declaration
+    (1) declaration -> . token identifier
+    (3) token -> . TYPEID
+    (4) token -> . FLOAT
+    (5) token -> . CHAR
+    (6) token -> . INT
+
+    TYPEID          shift and go to state 3
+    FLOAT           shift and go to state 4
+    CHAR            shift and go to state 5
+    INT             shift and go to state 6
+
+    declaration                    shift and go to state 1
+    token                          shift and go to state 2
+
+state 1
+
+    (0) S' -> declaration .
+
+
+
+state 2
+
+    (1) declaration -> token . identifier
+    (2) identifier -> . ID
+
+    ID              shift and go to state 8
+
+    identifier                     shift and go to state 7
+
+state 3
+
+    (3) token -> TYPEID .
+
+    ID              reduce using rule 3 (token -> TYPEID .)
+
+
+state 4
+
+    (4) token -> FLOAT .
+
+    ID              reduce using rule 4 (token -> FLOAT .)
+
+
+state 5
+
+    (5) token -> CHAR .
+
+    ID              reduce using rule 5 (token -> CHAR .)
+
+
+state 6
+
+    (6) token -> INT .
+
+    ID              reduce using rule 6 (token -> INT .)
+
+
+state 7
+
+    (1) declaration -> token identifier .
+
+    $end            reduce using rule 1 (declaration -> token identifier .)
+
+
+state 8
+
+    (2) identifier -> ID .
+
+    $end            reduce using rule 2 (identifier -> ID .)
+
