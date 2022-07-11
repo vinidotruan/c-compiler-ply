@@ -1,1 +1,2 @@
-switch ( teste2 ) {case: { 2+ 2 break;}}
+while ( 1 > 2) { 2 + 2;}
+for( variable1; 1 > 2; variable2++) { 2 + 2;}

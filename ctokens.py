@@ -5,6 +5,8 @@ reserved = {
 	'char' : 'CHAR',
 	'int' : 'INT',
 	'switch': 'SWITCH',
+	'while': 'WHILE',
+	'for': 'FOR',
 	'case': 'CASE',
 	'if': 'IF',
 	'else': 'ELSE',
@@ -26,6 +28,8 @@ t_LPAR = '\('
 t_RPAR = '\)'
 t_DPOINT = '\:'
 t_SWITCH = r'switch'
+t_WHILE = r'while'
+t_FOR = r'for'
 t_CASE = r'case'
 t_IF = r'if'
 t_ELSE = r'else'
